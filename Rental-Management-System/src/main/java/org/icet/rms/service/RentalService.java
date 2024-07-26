@@ -2,6 +2,10 @@ package org.icet.rms.service;
 
 import org.icet.rms.dto.Rental;
 
+import java.util.List;
+
 public interface RentalService {
-    void save(Rental rental);
+    void persist(Rental rental);
+
+    List<Rental> retrieve();
 }

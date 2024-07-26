@@ -5,6 +5,8 @@ import org.icet.rms.service.RentalService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("rental")
@@ -18,8 +20,12 @@ public class RentalController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    void saveRental(Rental rental){
-        service.save(rental);
+    void saveRental(@RequestBody Rental rental){
+        service.persist(rental);
+    }
 
+    @GetMapping()
+    List<Rental>getAllRentals(){
+        return service.retrieve();
     }
 }
