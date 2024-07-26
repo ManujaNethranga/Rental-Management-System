@@ -64,4 +64,12 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return new Customer();
     }
+
+    @Override
+    public Customer getByName(String name) {
+        if(repository.existsByName(name)){
+            return mapper.convertValue(repository.findByName(name),Customer.class);
+        }
+        return new Customer();
+    }
 }

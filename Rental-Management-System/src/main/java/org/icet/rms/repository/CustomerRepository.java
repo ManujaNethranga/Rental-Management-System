@@ -5,4 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface CustomerRepository extends CrudRepository<CustomerEntity,Long> {
+    boolean existsByName(String name);
+
+    CustomerEntity findByName(String name);
 }

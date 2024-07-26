@@ -14,4 +14,6 @@ public interface CustomerService {
     String update(Customer customer);
 
     Customer getById(Long id);
+
+    Customer getByName(String name);
 }
