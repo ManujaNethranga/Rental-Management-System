@@ -5,6 +5,8 @@ import org.icet.rms.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/customer")
@@ -22,5 +24,9 @@ public class CustomerController {
         customerService.persist(customer);
     }
 
+    @GetMapping()
+    List<Customer> getCustomerList(){
+        return customerService.retrieve();
+    }
 
 }

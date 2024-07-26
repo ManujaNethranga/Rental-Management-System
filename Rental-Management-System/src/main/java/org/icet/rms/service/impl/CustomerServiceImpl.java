@@ -7,6 +7,9 @@ import org.icet.rms.repository.CustomerRepository;
 import org.icet.rms.service.CustomerService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
@@ -22,5 +25,15 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void persist(Customer customer) {
         repository.save(mapper.convertValue(customer, CustomerEntity.class));
+    }
+
+    @Override
+    public List<Customer> retrieve() {
+        List<Customer> list = new ArrayList<>();
+        Iterable<CustomerEntity> allCustomers = repository.findAll();
+        allCustomers.forEach(element ->{
+            list.add(mapper.convertValue(element,Customer.class));
+        });
+        return list;
     }
 }
