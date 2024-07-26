@@ -5,6 +5,8 @@ import org.icet.rms.service.RentalDetailService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/rentalDetails")
@@ -20,5 +22,10 @@ public class RentalDetailController {
     @ResponseStatus(HttpStatus.CREATED)
     void saveRentalDetails(@RequestBody RentalDetail rentalDetail){
         service.persist(rentalDetail);
+    }
+
+    @GetMapping()
+    List<RentalDetail> getAllRentalDetails(){
+        return service.retrieve();
     }
 }

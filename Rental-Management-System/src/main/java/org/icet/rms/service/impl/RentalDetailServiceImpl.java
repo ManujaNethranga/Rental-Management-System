@@ -7,6 +7,9 @@ import org.icet.rms.repository.RentalDetailRepository;
 import org.icet.rms.service.RentalDetailService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class RentalDetailServiceImpl implements RentalDetailService {
 
@@ -21,5 +24,15 @@ public class RentalDetailServiceImpl implements RentalDetailService {
     @Override
     public void persist(RentalDetail rentalDetail) {
         repository.save(mapper.convertValue(rentalDetail, RentalDetailEntity.class));
+    }
+
+    @Override
+    public List<RentalDetail> retrieve() {
+        List<RentalDetail> list = new ArrayList<>();
+        Iterable<RentalDetailEntity> all = repository.findAll();
+        all.forEach(element ->{
+            list.add(mapper.convertValue(element,RentalDetail.class));
+        });
+        return list;
     }
 }
