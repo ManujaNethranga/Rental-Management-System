@@ -10,4 +10,8 @@ public interface CustomerService {
     List<Customer> retrieve();
 
     String delete(Long id);
+
+    String update(Customer customer);
+
+    Customer getById(Long id);
 }

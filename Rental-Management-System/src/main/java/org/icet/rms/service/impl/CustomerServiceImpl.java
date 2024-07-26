@@ -46,4 +46,22 @@ public class CustomerServiceImpl implements CustomerService {
         }
         return "Deleted!!";
     }
+
+    @Override
+    public String update(Customer customer) {
+        if(repository.existsById(customer.getCustomerId())){
+            repository.save(mapper.convertValue(customer, CustomerEntity.class));
+        }else{
+            return "id Not Found!!";
+        }
+        return "Updated!!";
+    }
+
+    @Override
+    public Customer getById(Long id) {
+        if(repository.existsById(id)){
+            return mapper.convertValue(repository.findById(id),Customer.class);
+        }
+        return new Customer();
+    }
 }
