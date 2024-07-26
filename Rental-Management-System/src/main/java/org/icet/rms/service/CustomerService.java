@@ -8,4 +8,6 @@ public interface CustomerService {
     void persist(Customer customer);
 
     List<Customer> retrieve();
+
+    String delete(Long id);
 }

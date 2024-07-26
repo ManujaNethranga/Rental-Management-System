@@ -36,4 +36,14 @@ public class CustomerServiceImpl implements CustomerService {
         });
         return list;
     }
+
+    @Override
+    public String delete(Long id) {
+        if(repository.existsById(id)){
+            repository.deleteById(id);
+        }else{
+            return "id Not Found!!";
+        }
+        return "Deleted!!";
+    }
 }
