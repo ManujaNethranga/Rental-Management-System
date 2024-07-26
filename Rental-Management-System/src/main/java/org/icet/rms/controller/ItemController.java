@@ -33,4 +33,9 @@ public class ItemController {
     String deleteItems(@PathVariable Long id){
         return itemService.delete(id);
     }
+
+    @PutMapping()
+    String updateItems(@RequestBody Item item){
+        return itemService.update(item);
+    }
 }

@@ -10,4 +10,6 @@ public interface ItemService {
     List<Item> retrieve();
 
     String delete(Long id);
+
+    String update(Item item);
 }

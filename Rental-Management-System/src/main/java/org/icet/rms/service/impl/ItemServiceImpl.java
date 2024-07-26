@@ -45,4 +45,14 @@ public class ItemServiceImpl implements ItemService {
         }
         return "Deleted!!";
     }
+
+    @Override
+    public String update(Item item) {
+        if(repository.existsById(item.getItemId())){
+            repository.save(mapper.convertValue(item, ItemEntity.class));
+        }else{
+            return "Items Not Found!!";
+        }
+        return "Updated!!" ;
+    }
 }

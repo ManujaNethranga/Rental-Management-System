@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(repository.existsById(customer.getCustomerId())){
             repository.save(mapper.convertValue(customer, CustomerEntity.class));
         }else{
-            return "id Not Found!!";
+            return "Customer Not Found!!";
         }
         return "Updated!!";
     }
