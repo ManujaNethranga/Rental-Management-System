@@ -423,3 +423,15 @@ n
 >src/main/java/org/icet/rms/service/impl/RentalServiceImpl.java,a\c\ac58ece215b6ab08599c0abde30a958db5daa74a
 e
 5src/main/java/org/icet/rms/service/RentalService.java,2\e\2e35627d8f450846bdee69e7c1b9adf78200b8c9
+`
+0src/main/java/org/icet/rms/dto/RentalDetail.java,d\0\d044e716922e560d6b786cb420acb5bb9eb9f432
+i
+9src/main/java/org/icet/rms/entity/RentalDetailEntity.java,8\9\896f27fd607f344f34580f43e3db5ac0c6021435
+q
+Asrc/main/java/org/icet/rms/repository/RentalDetailRepository.java,f\7\f7e872ce2322332b4eaab0e1e8485d8107e7dcb2
+t
+Dsrc/main/java/org/icet/rms/service/impl/RentalDetailServiceImpl.java,a\d\ad6bd2ee0350235325a2e07d8dc8a3167b6f0914
+k
+;src/main/java/org/icet/rms/service/RentalDetailService.java,5\f\5f4fff937c987a41a6b03fa592633c127d6bca17
+q
+Asrc/main/java/org/icet/rms/controller/RentalDetailController.java,5\4\5455da4050b58dc9b3be41aa6f1cd1c9b9f8e645
